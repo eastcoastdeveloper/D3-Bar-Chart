@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>D3 Bar Chart</title>
+	<style>
+		html,
+		body {
+			width: 100%;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+
+		#graph-wrapper {
+			min-height: 300px;
+			max-width: 750px;
+			margin: 0 auto;
+		}
+
+		text {
+			font-size: 1.2em;
+		}
+
+		iframe {
+			margin: 0;
+		}
+
+		line {
+			display: none;
+		}
+
+		[text-anchor="end"] .domain {
+			d: path("M 0 0.5 H 0.5 V 250.5 H 0")
+		}
+
+		[text-anchor="middle"] .domain {
+			d: path("M 0.5 6 V 0.5 H 531.5 V 0");
+		}
+
+		.dashboard-link {
+			font: normal 14px sans-serif;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-color: lightgrey;
+			border-top: 1px solid black;
+			padding: 10px;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			font-style: italic;
+		}
+
+		.dashboard-link a:hover {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="graph-wrapper">
+		<svg></svg>
+	</div>
+	<div class="dashboard-link">
+		<a href="https://stackblitz.com/@eastcoastdeveloper" target="_blank">See more of my Stackblitz projects
+			here.</a>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.5.0/d3.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
