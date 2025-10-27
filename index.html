@@ -65,5 +65,68 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.5.0/d3.min.js"></script>
     <script src="script.js"></script>
+
+    <footer id="rotatingFooter"></footer>
+
+    <!-- Footer -->
+    <script>
+      const footer = document.getElementById('rotatingFooter');
+
+      const footerItems = [
+        {
+          img: 'https://webdevunlimited.tech/images/amazon-logo.png',
+          text: 'CMSs, E-Commerce Tools, & Website Builders Explained',
+          link: 'https://tinyurl.com/3m5hyrk5',
+        },
+        {
+          img: 'https://webdevunlimited.tech/images/favicon.png',
+          text: 'Web Dev Unlimited',
+          link: 'https://webdevunlimited.tech/',
+        },
+      ];
+
+      Object.assign(footer.style, {
+        position: 'fixed',
+        bottom: '0',
+        left: '0',
+        width: '100%',
+        background: '#0c1020',
+        color: '#fff',
+        textAlign: 'center',
+        padding: '5px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '10px',
+        zIndex: '9999',
+        fontFamily: 'sans-serif',
+      });
+
+      const img = document.createElement('img');
+      img.style.height = '25px';
+      img.style.width = 'auto';
+      img.style.borderRadius = '4px';
+
+      const textLink = document.createElement('a');
+      textLink.style.color = '#fff';
+      textLink.style.textDecoration = 'none';
+      textLink.style.fontSize = '.9rem';
+
+      footer.appendChild(img);
+      footer.appendChild(textLink);
+
+      function showRandomItem() {
+        const item =
+          footerItems[Math.floor(Math.random() * footerItems.length)];
+        img.src = item.img;
+        textLink.href = item.link;
+        textLink.textContent = item.text;
+        textLink.target = '_blank';
+        textLink.rel = 'noopener noreferrer';
+      }
+
+      showRandomItem();
+      setInterval(showRandomItem, 10000);
+    </script>
   </body>
 </html>
